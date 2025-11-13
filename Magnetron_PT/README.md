@@ -1,4 +1,4 @@
-﻿#  Magnetron - Prueba Desarrollador Senior
+﻿#  MAGNETRON PRUEBA DESARROLLADOR SENIOR
 
 Proyecto desarrollado en **.NET 8**, **Entity Framework Core** y **SQL Server / Azure SQL**, como parte de la **Prueba Técnica para Grupo Magnetron**.
 
@@ -13,7 +13,7 @@ Magnetron_PT/
 ├── README.md # Documentación general
 └── appsettings.json # Configuración local
 
-## 🧰 Tecnologías utilizadas
+## Tecnologías utilizadas
 
 - **C# / .NET 8**
 - **Entity Framework Core**
@@ -25,15 +25,15 @@ Magnetron_PT/
 
 ---
 
-## 🚀 Funcionalidades principales
+## Funcionalidades principales
 
 - CRUD completo de **Personas**, **Productos** y **Facturas**.
 - Endpoints adicionales para consultar **vistas SQL**:
-  - Total facturado por persona.
-  - Persona que compró el producto más caro.
-  - Productos ordenados por cantidad facturada.
-  - Productos por utilidad generada.
-  - Productos con margen de ganancia.
+- Total facturado por persona.
+- Persona que compró el producto más caro.
+- Productos ordenados por cantidad facturada.
+- Productos por utilidad generada.
+- Productos con margen de ganancia.
 - Despliegue rápido mediante **contenedor Docker**.
 - Logs estructurados con **Serilog**.
 - Código estructurado bajo principios **SOLID**.
@@ -93,7 +93,7 @@ docker run -d -p 5167:5167 magnetron_api
 Luego abre en navegador:
 -- http://localhost:5167/swagger/index.html
 
-## ✅ PLUS aplicados
+## PLUS APLICADOS
 ## PLUS 1 – Variables de entorno para conexión
 
 El connection string puede configurarse desde una variable de entorno en lugar de appsettings.json para entornos productivos (Docker, Azure, etc.).
