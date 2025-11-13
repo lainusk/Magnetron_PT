@@ -61,8 +61,12 @@ cd Magnetron_PT
 ```
 
 ### 2. Configurar la base de datos
+Para este reto se creo una Base datos en Azure:
+Usuario Desarrollo
+Contraseña: qBuLED@YTG!4yRJ
+Server=tcp:sqlserverprb004.database.windows.net,1433
 
-En el archivo `appsettings.json`, define la conexión a tu Azure SQL o SQL Server local:
+En el archivo `appsettings.json`, define la conexión a Azure SQL:
 
 ```json
 {
