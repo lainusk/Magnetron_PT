@@ -1,4 +1,4 @@
-﻿#  MAGNETRON PRUEBA DESARROLLADOR SENIOR
+#  MAGNETRON PRUEBA DESARROLLADOR SENIOR
 
 Proyecto desarrollado en **.NET 8**, **Entity Framework Core** y **SQL Server / Azure SQL**, como parte de la **Prueba Técnica para Grupo Magnetron**.
 
@@ -37,18 +37,12 @@ Magnetron_PT/
 - Despliegue rápido mediante **contenedor Docker**.
 - Logs estructurados con **Serilog**.
 - Código estructurado bajo principios **SOLID**.
-
-
-
 ## INSTALACION RAPIDA
-
 ### 1. Clonar el repositorio
 
--- ```bash
+```bash
 git clone https://github.com/lainusk/Magnetro_PT
 cd magnetron_pt
-
-##
 
 ### 2️. Configurar la base de datos
 
@@ -85,13 +79,12 @@ EXPOSE 5167
 ENV ASPNETCORE_URLS=http://+:5167
 ENTRYPOINT ["dotnet", "Magnetron_PT.dll"]
 
---
 ## Construcción y ejecución
 docker build -t magnetron_api .
 docker run -d -p 5167:5167 magnetron_api
 
 Luego abre en navegador:
--- http://localhost:5167/swagger/index.html
+http://localhost:5167/swagger/index.html
 
 ## PLUS APLICADOS
 ## PLUS 1 – Variables de entorno para conexión
@@ -149,5 +142,6 @@ Separa compilación y ejecución, alineado con buenas prácticas DevOps.
 
 Kelly P. Diaz Granados N. 
 Desarrolladora .NET | Apasionada por arquitectura limpia, optimización y buenas prácticas DevOps.
-📧 lainusk@gmail.com 
-🌐 GitHub: lainusk
+Correo lainusk@gmail.com 
+GitHub: lainusk
+
