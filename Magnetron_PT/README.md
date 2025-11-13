@@ -7,13 +7,21 @@ Proyecto desarrollado en **.NET 8**, **Entity Framework Core** y **SQL Server / 
 ## ESTRUCTURA DEL PROYECTO
 
 Magnetron_PT/
+
 ├── Controllers/ # Controladores de la API
+
 ├── Models/ # Entidades y relaciones
+
 ├── Data/ # Contexto de base de datos
+
 ├── Scripts/ # Scripts SQL de creación y vistas
+
 ├── Dockerfile # Imagen para despliegue (multi-stage)
+
 ├── README.md # Documentación general
+
 └── appsettings.json # Configuración local
+
 
 ---
 
