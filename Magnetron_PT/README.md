@@ -1,4 +1,4 @@
-#  MAGNETRON PRUEBA DESARROLLADOR SENIOR
+﻿#  MAGNETRON PRUEBA DESARROLLADOR SENIOR
 Proyecto desarrollado en **.NET 8**, **Entity Framework Core** y **SQL Server / Azure SQL**, como parte de la **Prueba Técnica para Grupo Magnetron**.
 
 ##  Estructura del proyecto
