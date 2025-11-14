@@ -36,7 +36,67 @@ Magnetron_PT/
 - **Git / GitHub**
 
 ---
+## Patrones de Diseño Aplicados
 
+En este proyecto se identifican varios patrones de diseño que facilitan la organización, mantenibilidad y escalabilidad de la API:
+
+### 1. Repository / Unit of Work (implícito)
+El `MagnetronDbContext` centraliza todos los `DbSet` (`Persona`, `Producto`, `Fact_Encabezado`, `Fact_Detalle`, vistas) y funciona como un patrón **Unit of Work + Repository** implícito.  
+Los `Controllers` interactúan con el contexto para consultas y modificaciones, manteniendo la lógica de acceso a datos organizada y centralizada.
+
+**Referencia:**   `Data/MagnetronDbContext.cs`
+
+### 2. Dependency Injection (DI)
+Todos los `Controllers` reciben el `DbContext` mediante **inyección de dependencias**, desacoplando la lógica de persistencia de la API y facilitando pruebas unitarias.
+```
+<ccsharp
+public PersonaController(MagnetronDbContext context)
+{
+    _context = context;
+}
+```
+### 3. Façade
+
+Cada Controller actúa como fachada para exponer los endpoints de la API de manera sencilla, ocultando la complejidad de EF Core y las relaciones entre entidades.
+PersonaController → CRUD de personas
+ProductoController → CRUD de productos
+Consulta_de_FacturasController → CRUD de facturas y validación de relaciones con Persona y Producto
+Patrón usado: Façade
+
+### 4. DTO / ViewModel (implícito)
+
+Las vistas (VW_*) funcionan como ViewModels o DTOs de solo lectura, proporcionando datos preprocesados para reporting sin exponer la lógica interna.
+```
+public DbSet<VW_TotalFacturadoPorPersona> VW_TotalFacturadoPorPersona { get; set; }
+```
+Patrón usado: ViewModel / Read-Only DTO
+### 5. Fluent Interface
+
+Las consultas complejas usan method chaining de LINQ + EF Core, mejorando legibilidad y expresividad:
+```
+_context.Fact_Encabezado
+    .Include(f => f.Persona)
+    .Include(f => f.Detalles)
+        .ThenInclude(d => d.Producto)
+```
+Patrón usado: Fluent Interface
+
+### 6. Separation of Concerns (SoC)
+Cada capa tiene responsabilidades claramente definidas:
+  - Capa	Responsabilidad
+  - Models	Definición de entidades y validaciones
+  - Data	Persistencia de datos (DbContext)
+  - Controllers	Exposición de endpoints y lógica de flujo
+  - Views	Consultas predefinidas para reporting
+Esto permite mantener el proyecto organizado y fácil de mantener.
+
+### 7. Manejo de Excepciones / Resiliencia
+
+Uso consistente de try/catch y validaciones de ModelState en los Controllers para manejar errores y asegurar respuestas coherentes al cliente.
+Patrón aplicado: Robustez / Safe Handling
+
+
+---
 ## FUNCIONALIDADES PRINCIPALES
 
 - CRUD completo de **Personas**, **Productos** y **Facturas**.
